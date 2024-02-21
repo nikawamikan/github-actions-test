@@ -17,7 +17,7 @@ jobs:
     container: 
       image: python:3.12-bookworm
     steps:
-      - uses: actions/checkout
+      - uses: actions/checkout@dev
       - name: Log python version
         run: |
           python --version
