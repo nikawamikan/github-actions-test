@@ -1,0 +1,25 @@
+name: Deployment
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deployment:
+    name: deployment
+    runs-on: ubuntu-latest
+    container: 
+      image: python:3.12-bookworm
+    steps:
+      - name: Log python version
+        run: |
+          python --version
+          cat /etc/os-release
+          python test.py
+
+      
