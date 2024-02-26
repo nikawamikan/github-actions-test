@@ -11,8 +11,10 @@ on:
 
 jobs:
   test:
+    name: test
     uses: ./.github/workflows/test.yaml
   deployment:
+    needs: test # testが完了しないとdeployしないようにする的なヤツ
     name: deployment
     runs-on: ubuntu-latest
     steps:
